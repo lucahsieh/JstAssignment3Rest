@@ -40,13 +40,11 @@ CREATE TABLE Timesheets(
 CREATE TABLE TimesheetRows(
 	TimesheetRow_ID int NOT NULL, 
 	Timesheet_ID_FK int NOT NULL,
-	Emp_ID_FK int NOT NULL,  
 	ProjectID int, 
 	WorkPackage TINYTEXT, 
 	Sat DECIMAL, Sun DECIMAL, Mon DECIMAL, Tue DECIMAL, Wed DECIMAL, Thu DECIMAL, Fri DECIMAL, 
 	Notes TINYTEXT,
 	PRIMARY KEY(TimesheetRow_ID),
-	FOREIGN KEY(Emp_ID_FK) REFERENCES Employees(Emp_ID),
 	FOREIGN KEY(Timesheet_ID_FK) REFERENCES Timesheets(Timesheet_ID)
 	);
 
@@ -68,233 +66,52 @@ INSERT INTO Timesheets VALUES(6,2, "2019-11-08", 1.0, 1.2);
 INSERT INTO Timesheets VALUES(7,2, "2019-11-01", 1.0, 1.2);
 INSERT INTO Timesheets VALUES(8,2, "2019-10-25", 1.0, 1.2);
 
+INSERT INTO TimesheetRows VALUES(0, 0, 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(1, 0, 991, "BB991", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(2, 0, 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(3, 0, 131, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(4, 0, 136, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(5, 1, 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(6, 1, 991, "BB991", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(7, 1, 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(8, 1, 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(9, 1, 131, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
 
+INSERT INTO TimesheetRows VALUES(10, 2, 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(11, 2, 991, "BB991", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(12, 2, 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(13, 2, 131, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(14, 2, 136, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(15, 3, 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(16, 3, 991, "BB991", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(17, 3, 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(18, 3, 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(19, 3, 131, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
 
+INSERT INTO TimesheetRows VALUES(20, 4, 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(21, 4, 991, "BB991", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(22, 4, 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(23, 4, 131, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(24, 4, 136, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(25, 5, 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(26, 5, 991, "BB991", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(27, 5, 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(28, 5, 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(29, 5, 131, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
 
+INSERT INTO TimesheetRows VALUES(30, 6, 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(31, 6, 991, "BB991", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(32, 6, 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(33, 6, 131, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(34, 6, 136, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(35, 7, 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(36, 7, 991, "BB991", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(37, 7, 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(38, 7, 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(39, 7, 131, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
 
-
-
-DROP TABLE IF EXISTS Employees;
-CREATE TABLE Employees(EmpNumber int, Name TINYTEXT, UserName TINYTEXT, AdminRights BIT);
-INSERT INTO Employees VALUES(100,"Job Boss", "JB0", 1);
-INSERT INTO Employees VALUES(101,"Job Boss", "JB1", 0);
-INSERT INTO Employees VALUES(102,"Job Boss", "JB2", 0);
-INSERT INTO Employees VALUES(103,"Job Boss", "JB3", 0);
-INSERT INTO Employees VALUES(104,"Job Boss", "JB4", 0);
-
-DROP TABLE IF EXISTS Credentials;
-CREATE TABLE Credentials(UserName TINYTEXT, Password TINYTEXT);
-INSERT INTO Credentials VALUES("JB0", "JB0");
-INSERT INTO Credentials VALUES("JB1", "JB1");
-INSERT INTO Credentials VALUES("JB2", "JB2");
-INSERT INTO Credentials VALUES("JB3", "JB3");
-INSERT INTO Credentials VALUES("JB4", "JB4");
-
-DROP TABLE IF EXISTS Timesheets;
-CREATE TABLE Timesheets(
-	Timesheet_ID INTEGER NOT NULL, 
-	EmpNumber int,EndWeek Date ,OverTime DECIMAL, FlexTime DECIMAL,
-	PRIMARY KEY(Timesheet_ID)
-	);
-INSERT INTO Timesheets VALUES(1,100, "2019-11-08", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(2,100, "2019-11-01", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(3,100, "2019-10-25", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(4,100, "2019-10-18", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(5,100, "2019-10-11", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(6,100, "2019-10-04", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(7,100, "2019-09-27", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(8,100, "2019-09-20", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(9,100, "2019-09-13", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(10,100, "2019-09-06", 1.0, 1.2);
-
-INSERT INTO Timesheets VALUES(11,101, "2019-11-08", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(12,101, "2019-11-01", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(13,101, "2019-10-25", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(14,101, "2019-10-18", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(15,101, "2019-10-11", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(16,101, "2019-10-04", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(17,101, "2019-09-27", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(18,101, "2019-09-20", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(19,101, "2019-09-13", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(20,101, "2019-09-06", 1.0, 1.2);
-
-INSERT INTO Timesheets VALUES(21,102, "2019-11-08", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(22,102, "2019-11-01", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(23,102, "2019-10-25", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(24,102, "2019-10-18", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(25,102, "2019-10-11", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(26,102, "2019-10-04", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(27,102, "2019-09-27", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(28,102, "2019-09-20", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(29,102, "2019-09-13", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(30,102, "2019-09-06", 1.0, 1.2);
-
-INSERT INTO Timesheets VALUES(31,103, "2019-11-08", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(32,103, "2019-11-01", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(33,103, "2019-10-25", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(34,103, "2019-10-18", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(35,103, "2019-10-11", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(36,103, "2019-10-04", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(37,103, "2019-09-27", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(38,103, "2019-09-20", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(39,103, "2019-09-13", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(40,103, "2019-09-06", 1.0, 1.2);
-
-INSERT INTO Timesheets VALUES(41,104, "2019-11-08", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(42,104, "2019-11-01", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(43,104, "2019-10-25", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(44,104, "2019-10-18", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(45,104, "2019-10-11", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(46,104, "2019-10-04", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(47,104, "2019-09-27", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(48,104, "2019-09-20", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(49,104, "2019-09-13", 1.0, 1.2);
-INSERT INTO Timesheets VALUES(50,104, "2019-09-06", 1.0, 1.2);
-
-DROP TABLE IF EXISTS TimesheetRows;
-CREATE TABLE TimesheetRows(CUSTOMER_ID INTEGER NOT NULL, EmpNumber int, EndWeek Date, ProjectID int, WorkPackage TINYTEXT, Sat DECIMAL, Sun DECIMAL, Mon DECIMAL, Tue DECIMAL, Wed DECIMAL, Thu DECIMAL, Fri DECIMAL, Notes TINYTEXT);
-INSERT INTO TimesheetRows VALUES(100, "2019-11-01", 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(100, "2019-11-01", 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(100, "2019-11-01", 130, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(100, "2019-11-01", 130, "AA123", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(100, "2019-11-01", 131, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(100, "2019-11-01", 132, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(100, "2019-11-01", 133, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(100, "2019-11-08", 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(100, "2019-11-08", 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(100, "2019-11-08", 130, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(100, "2019-11-08", 130, "AA123", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(100, "2019-11-08", 131, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(100, "2019-11-08", 132, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(100, "2019-11-08", 133, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(100, "2019-10-25", 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(100, "2019-10-25", 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(100, "2019-10-25", 130, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(100, "2019-10-25", 130, "AA123", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(100, "2019-10-25", 131, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(100, "2019-10-25", 132, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(100, "2019-10-25", 133, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(100, "2019-10-18", 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(100, "2019-10-18", 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(100, "2019-10-18", 130, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(100, "2019-10-18", 130, "AA123", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(100, "2019-10-18", 131, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(100, "2019-10-18", 132, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(100, "2019-10-18", 133, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-
-INSERT INTO TimesheetRows VALUES(101, "2019-11-01", 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(101, "2019-11-01", 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(101, "2019-11-01", 130, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(101, "2019-11-01", 130, "AA123", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(101, "2019-11-01", 131, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(101, "2019-11-01", 132, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(101, "2019-11-01", 133, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(101, "2019-11-08", 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(101, "2019-11-08", 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(101, "2019-11-08", 130, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(101, "2019-11-08", 130, "AA123", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(101, "2019-11-08", 131, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(101, "2019-11-08", 132, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(101, "2019-11-08", 133, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(101, "2019-10-25", 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(101, "2019-10-25", 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(101, "2019-10-25", 130, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(101, "2019-10-25", 130, "AA123", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(101, "2019-10-25", 131, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(101, "2019-10-25", 132, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(101, "2019-10-25", 133, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(101, "2019-10-18", 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(101, "2019-10-18", 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(101, "2019-10-18", 130, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(101, "2019-10-18", 130, "AA123", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(101, "2019-10-18", 131, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(101, "2019-10-18", 132, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(101, "2019-10-18", 133, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-
-INSERT INTO TimesheetRows VALUES(102, "2019-11-01", 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(102, "2019-11-01", 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(102, "2019-11-01", 130, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(102, "2019-11-01", 130, "AA123", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(102, "2019-11-01", 131, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(102, "2019-11-01", 132, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(102, "2019-11-01", 133, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(102, "2019-11-08", 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(102, "2019-11-08", 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(102, "2019-11-08", 130, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(102, "2019-11-08", 130, "AA123", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(102, "2019-11-08", 131, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(102, "2019-11-08", 132, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(102, "2019-11-08", 133, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(102, "2019-10-25", 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(102, "2019-10-25", 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(102, "2019-10-25", 130, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(102, "2019-10-25", 130, "AA123", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(102, "2019-10-25", 131, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(102, "2019-10-25", 132, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(102, "2019-10-25", 133, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(102, "2019-10-18", 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(102, "2019-10-18", 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(102, "2019-10-18", 130, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(102, "2019-10-18", 130, "AA123", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(102, "2019-10-18", 131, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(102, "2019-10-18", 132, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(102, "2019-10-18", 133, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-
-INSERT INTO TimesheetRows VALUES(103, "2019-11-01", 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(103, "2019-11-01", 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(103, "2019-11-01", 130, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(103, "2019-11-01", 130, "AA123", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(103, "2019-11-01", 131, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(103, "2019-11-01", 132, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(103, "2019-11-01", 133, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(103, "2019-11-08", 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(103, "2019-11-08", 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(103, "2019-11-08", 130, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(103, "2019-11-08", 130, "AA123", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(103, "2019-11-08", 131, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(103, "2019-11-08", 132, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(103, "2019-11-08", 133, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(103, "2019-10-25", 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(103, "2019-10-25", 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(103, "2019-10-25", 130, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(103, "2019-10-25", 130, "AA123", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(103, "2019-10-25", 131, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(103, "2019-10-25", 132, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(103, "2019-10-25", 133, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(103, "2019-10-18", 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(103, "2019-10-18", 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(103, "2019-10-18", 130, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(103, "2019-10-18", 130, "AA123", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(103, "2019-10-18", 131, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(103, "2019-10-18", 132, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(103, "2019-10-18", 133, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-
-INSERT INTO TimesheetRows VALUES(104, "2019-11-01", 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(104, "2019-11-01", 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(104, "2019-11-01", 130, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(104, "2019-11-01", 130, "AA123", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(104, "2019-11-01", 131, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(104, "2019-11-01", 132, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(104, "2019-11-01", 133, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(104, "2019-11-08", 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(104, "2019-11-08", 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(104, "2019-11-08", 130, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(104, "2019-11-08", 130, "AA123", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(104, "2019-11-08", 131, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(104, "2019-11-08", 132, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(104, "2019-11-08", 133, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(104, "2019-10-25", 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(104, "2019-10-25", 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(104, "2019-10-25", 130, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(104, "2019-10-25", 130, "AA123", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(104, "2019-10-25", 131, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(104, "2019-10-25", 132, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(104, "2019-10-25", 133, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(104, "2019-10-18", 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(104, "2019-10-18", 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(104, "2019-10-18", 130, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(104, "2019-10-18", 130, "AA123", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(104, "2019-10-18", 131, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(104, "2019-10-18", 132, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-INSERT INTO TimesheetRows VALUES(104, "2019-10-18", 133, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
-
+INSERT INTO TimesheetRows VALUES(40, 8, 130, "AA120", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(41, 8, 991, "BB991", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(42, 8, 130, "AA121", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(43, 8, 131, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
+INSERT INTO TimesheetRows VALUES(44, 8, 136, "AA122", 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, "");
